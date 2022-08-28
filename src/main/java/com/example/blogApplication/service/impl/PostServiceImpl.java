@@ -8,6 +8,7 @@ import com.example.blogApplication.service.PostService;
 import com.example.blogApplication.utils.PostsDtoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ import java.util.List;
  * Since it's the only implementation we don't really need to qualify it.
  * Now we need an instance of PostRepository for this, hence autowired.
  * Instead of returning a list we're returning an object. It's good practice.
+ * resetAutoIncrement() : Post deletion of the entities, we're resetting the id value
+ *
  */
 @Service
 public class PostServiceImpl implements PostService {
@@ -71,6 +74,15 @@ public class PostServiceImpl implements PostService {
             throw new ResourceNotFoundException("post", "id", id);
         });
         postRepository.delete(post);
+        //resetting the id when the count becomes zero
+        if (postRepository.count() == 0) {
+            String tableName = "Posts";
+            resetAutoIncrement(tableName);
+        }
+    }
+    @Override
+    public void resetAutoIncrement(String tableName) {
+        postRepository.resetAutoIncrement(tableName);
     }
 
     private Post mapToPost(PostDto postDto) {

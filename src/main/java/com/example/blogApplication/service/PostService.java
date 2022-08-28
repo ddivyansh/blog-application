@@ -14,4 +14,6 @@ public interface PostService {
     public PostDto updatePostById(PostDto postDto, long id);
 
     void deletePostById(long id);
+
+    void resetAutoIncrement(String tableName);
 }
