@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * We're implementing a loose coupled approach hence we autowire the interface not the class.
  * Since there's a single implementation of service class spring will find the implementation as long as the component scanning is enabled, and the impl is annotated with some annotation which enables its detection during component scan.
+ * Go through the controller methods once !
  */
 @RestController
 @RequestMapping("/api/posts")
