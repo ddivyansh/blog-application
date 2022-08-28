@@ -1,7 +1,7 @@
-package com.example.blogapplication.service;
+package com.example.blogApplication.service;
 
-import com.example.blogapplication.payload.PostDto;
-import com.example.blogapplication.utils.PostsDtoList;
+import com.example.blogApplication.payload.PostDto;
+import com.example.blogApplication.utils.PostsDtoList;
 
 
 public interface PostService {

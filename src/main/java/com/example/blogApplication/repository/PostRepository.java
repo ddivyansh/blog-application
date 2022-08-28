@@ -1,6 +1,6 @@
-package com.example.blogapplication.repository;
+package com.example.blogApplication.repository;
 
-import com.example.blogapplication.entity.Post;
+import com.example.blogApplication.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

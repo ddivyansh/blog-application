@@ -1,6 +1,6 @@
-package com.example.blogapplication.utils;
+package com.example.blogApplication.utils;
 
-import com.example.blogapplication.payload.PostDto;
+import com.example.blogApplication.payload.PostDto;
 
 
 import java.util.List;

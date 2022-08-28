@@ -1,11 +1,11 @@
-package com.example.blogapplication.service.impl;
+package com.example.blogApplication.service.impl;
 
-import com.example.blogapplication.entity.Post;
-import com.example.blogapplication.exceptions.ResourceNotFoundException;
-import com.example.blogapplication.payload.PostDto;
-import com.example.blogapplication.repository.PostRepository;
-import com.example.blogapplication.service.PostService;
-import com.example.blogapplication.utils.PostsDtoList;
+import com.example.blogApplication.entity.Post;
+import com.example.blogApplication.exceptions.ResourceNotFoundException;
+import com.example.blogApplication.payload.PostDto;
+import com.example.blogApplication.repository.PostRepository;
+import com.example.blogApplication.service.PostService;
+import com.example.blogApplication.utils.PostsDtoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

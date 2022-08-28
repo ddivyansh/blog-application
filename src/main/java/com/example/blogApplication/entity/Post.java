@@ -1,4 +1,4 @@
-package com.example.blogapplication.entity;
+package com.example.blogApplication.entity;
 
 import lombok.*;
 

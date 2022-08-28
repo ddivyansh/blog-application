@@ -1,8 +1,8 @@
-package com.example.blogapplication.controller;
+package com.example.blogApplication.controller;
 
-import com.example.blogapplication.payload.PostDto;
-import com.example.blogapplication.service.PostService;
-import com.example.blogapplication.utils.PostsDtoList;
+import com.example.blogApplication.payload.PostDto;
+import com.example.blogApplication.service.PostService;
+import com.example.blogApplication.utils.PostsDtoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
