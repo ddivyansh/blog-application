@@ -7,7 +7,7 @@ import com.example.blogApplication.utils.PostsDtoList;
 public interface PostService {
     public PostDto createPost(PostDto postDto);
 
-    public PostsDtoList getAllPost();
+    public PostsDtoList getAllPost(int pageNo, int pageSize);
 
     public PostDto getPostById(long id);
 

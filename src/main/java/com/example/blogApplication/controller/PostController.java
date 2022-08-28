@@ -28,8 +28,9 @@ public class PostController {
 
     // get request to get all posts as an obj
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public PostsDtoList getAllPosts() {
-        return postService.getAllPost();
+    public PostsDtoList getAllPosts(@RequestParam(value = "pageNo", defaultValue = "0", required = false) int pageNo,
+                                    @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize) {
+        return postService.getAllPost(pageNo, pageSize);
     }
 
     //get request to get post by id
@@ -46,7 +47,7 @@ public class PostController {
 
     //delete request to delete post by id
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity deletePostById(@PathVariable long id){
+    public ResponseEntity deletePostById(@PathVariable long id) {
         postService.deletePostById(id);
         return new ResponseEntity("Post deleted successfully !", HttpStatus.OK);
     }
