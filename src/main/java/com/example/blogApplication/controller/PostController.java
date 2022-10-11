@@ -1,7 +1,9 @@
 package com.example.blogApplication.controller;
 
 import com.example.blogApplication.payload.PostDto;
+import com.example.blogApplication.payload.PostResponse;
 import com.example.blogApplication.service.PostService;
+import com.example.blogApplication.utils.AppConstants;
 import com.example.blogApplication.utils.PostsDtoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,11 +28,13 @@ public class PostController {
         return new ResponseEntity<>(postService.createPost(postDto), HttpStatus.CREATED);
     }
 
-    // get request to get all posts as an obj
+    // get request to get all posts as an obj, url : /api/posts?pageNo=5&pageSize=10
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public PostsDtoList getAllPosts(@RequestParam(value = "pageNo", defaultValue = "0", required = false) int pageNo,
-                                    @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize) {
-        return postService.getAllPost(pageNo, pageSize);
+    public PostResponse getAllPosts(@RequestParam(value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NO, required = false) int pageNo,
+                                    @RequestParam(value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE, required = false) int pageSize,
+                                    @RequestParam(value = "sortBy", defaultValue = AppConstants.DEFAULT_SORT_BY, required = false) String sortBy,
+                                    @RequestParam(value = "sortDir", defaultValue = AppConstants.DEFAULT_SORT_BY_DIRECTION, required = false) String sortDir) {
+        return postService.getAllPost(pageNo, pageSize, sortBy, sortDir);
     }
 
     //get request to get post by id
